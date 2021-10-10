@@ -20,5 +20,12 @@
     "multer": "^1.4.3",
     "nodemon": "^2.0.13",
     "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.9",
+    "postcss-cli": "^9.0.1",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^2.2.16"
   }
 }
