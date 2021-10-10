@@ -1,5 +1,5 @@
 const express = require("express");
-const multer  = require('multer');
+const multer = require('multer');
 const fs = require('fs-extra');
 
 async function startServer() {
@@ -9,7 +9,7 @@ async function startServer() {
   await require("./loaders").default(app);
 
   const server = app.listen(port, function () {
-      console.log("Listening on http://localhost:" + port);
+    console.log("Listening on http://localhost:" + port);
   });
 }
 

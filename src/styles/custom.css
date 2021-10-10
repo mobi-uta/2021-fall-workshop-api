@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Libre+Franklin&display=swap");
+
+:root {
+  @apply font-body;
+}
+
+h1 {
+  @apply text-4xl font-display;
+}
