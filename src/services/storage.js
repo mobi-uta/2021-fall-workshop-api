@@ -1,4 +1,5 @@
 const multer = require("multer");
+const fs = require('fs-extra');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {

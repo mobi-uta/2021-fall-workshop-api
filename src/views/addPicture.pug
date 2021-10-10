@@ -4,3 +4,7 @@ block content
   h1 Post
   h2=category
   
+  form(action=`/add/${category}` method="post" enctype="multipart/form-data")
+    input(type="file" name="image")
+    button Upload picture
+  
