@@ -7,7 +7,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      'display': '"Lbre Baskerville", serif',
+      'display': '"Libre Baskerville", serif',
       'body': '"Libre Franklin", sans-serif',
     },
     backgroundColor: theme => ({
@@ -17,7 +17,8 @@ module.exports = {
     }),
     textColor: theme => ({
       ...theme('colors'),
-      'primary': '#13A706'
+      'primary': '#13A706',
+      'secondary': '#FFF2DA',
     }),
     extend: {
     },
