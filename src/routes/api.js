@@ -20,6 +20,11 @@ router.get("/api/leaf", function (req, res, next) {
 router.post('/api/leaf', upload.single('image'), function (req, res, next) {
     storageService.processUploads("leaf", req);
 
+    imageProcessingService.read(req.file.path).then(pic => {
+        pic.grayscale()
+            .write(req.file.path);
+    });
+
     res.status(200).redirect("/success");
 })
 
