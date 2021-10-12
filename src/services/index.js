@@ -1,5 +1,7 @@
 const storage = require("./storage");
+const image = require("./image");
 
 module.exports = {
-  storage: storage
+  storage: storage,
+  image: image,
 }

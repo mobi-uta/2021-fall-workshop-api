@@ -4,6 +4,8 @@ const router = express.Router();
 const storageService = require("../services").storage;
 const upload = storageService.upload;
 
+const imageProcessingService = require("../services").image;
+
 router.post('/leaf', upload.single('image'), function (req, res, next) {
   storageService.processUploads("leaf", req);
   console.log(req.path)
@@ -13,7 +15,13 @@ router.post('/leaf', upload.single('image'), function (req, res, next) {
 
 router.post('/brown', upload.single('image'), function (req, res, next) {
   storageService.processUploads("brown", req);
-  console.log(req.path)
+
+  imageProcessingService.read(req.file.path).then(pic => {
+    pic.color([
+      { apply: 'hue', params: [-90] }
+    ])
+      .write(req.file.path);
+  });
 
   res.redirect("/success");
 })
