@@ -613,6 +613,30 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mt-12{
+  margin-top: 3rem;
+}
+
+.mt-4{
+  margin-top: 1rem;
+}
+
+.mb-24{
+  margin-bottom: 6rem;
+}
+
+.mt-8{
+  margin-top: 2rem;
+}
+
+.mb-16{
+  margin-bottom: 4rem;
+}
+
+.mt-20{
+  margin-top: 5rem;
+}
+
 .block{
   display: block;
 }
@@ -634,8 +658,25 @@ video {
   background-color: rgba(255, 242, 218, var(--tw-bg-opacity));
 }
 
+.p-0{
+  padding: 0px;
+}
+
+.py-0{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 .pt-24{
   padding-top: 6rem;
+}
+
+.pt-0{
+  padding-top: 0px;
+}
+
+.font-display{
+  font-family: "Libre Baskerville", serif;
 }
 
 .text-xl{
@@ -693,6 +734,7 @@ main{
 section, footer, header{
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
   max-width: 65ch;
   padding: 2rem;
 }
