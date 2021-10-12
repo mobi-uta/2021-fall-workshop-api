@@ -9,7 +9,9 @@ const upload = storageService.upload;
 //   GET Requests go here
 // ==================================================  
 router.get("/api/leaf", function (req, res, next) {
-    res.status(200).json({ leaf: "leaves are awesome" })
+    res.status(200).json({ leaf: "leaves are awesome", pics: [
+      "https://workshop-10-12-api.uta-mobi.repl.co/uploads/images/leaf/image-1633859142664-660248362.jpg"
+    ] })
 });
 
 // ==================================================  
@@ -18,7 +20,7 @@ router.get("/api/leaf", function (req, res, next) {
 router.post('/api/leaf', upload.single('image'), function (req, res, next) {
     storageService.processUploads("leaf", req);
 
-    res.redirect("/success");
+    res.status(200).redirect("/success");
 })
 
 router.post('/api/brown', upload.single('image'), function (req, res, next) {
@@ -31,7 +33,7 @@ router.post('/api/brown', upload.single('image'), function (req, res, next) {
             .write(req.file.path);
     });
 
-    res.redirect("/success");
+    res.status(200).redirect("/success");
 })
 
 module.exports = router;
