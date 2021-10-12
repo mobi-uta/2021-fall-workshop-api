@@ -613,26 +613,6 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.mt-12{
-  margin-top: 3rem;
-}
-
-.mt-4{
-  margin-top: 1rem;
-}
-
-.mb-24{
-  margin-bottom: 6rem;
-}
-
-.mt-8{
-  margin-top: 2rem;
-}
-
-.mb-16{
-  margin-bottom: 4rem;
-}
-
 .mt-20{
   margin-top: 5rem;
 }
@@ -658,21 +638,9 @@ video {
   background-color: rgba(255, 242, 218, var(--tw-bg-opacity));
 }
 
-.p-0{
-  padding: 0px;
-}
-
 .py-0{
   padding-top: 0px;
   padding-bottom: 0px;
-}
-
-.pt-24{
-  padding-top: 6rem;
-}
-
-.pt-0{
-  padding-top: 0px;
 }
 
 .font-display{
@@ -705,6 +673,7 @@ video {
 h1, h2, h3, h4, h5, h6{
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
+  text-transform: capitalize;
 }
 
 h1{
