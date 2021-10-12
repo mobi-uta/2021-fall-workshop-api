@@ -4,3 +4,7 @@ block content
     section
         h1.title=category
         p Share your thoughts by being RESTful
+    
+    section
+        each pic in pics
+            img(src=`/uploads/images/${category}/${pic}`).mb-4

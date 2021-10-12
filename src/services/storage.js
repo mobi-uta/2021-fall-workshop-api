@@ -1,31 +1,29 @@
 const multer = require("multer");
+const path = require('path');
 const fs = require('fs-extra');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/temp')
+    cb(null, 'src/public/uploads/temp')
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-    cb(null, file.fieldname + '-' + uniqueSuffix + ".jpg")
+    cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname))
   }
 })
 
-const upload = multer({ storage: storage });
+exports.upload = multer({ storage: storage });
 
-function processUploads(dirName, req) {
+exports.processUploads = function (dirName, req) {
   const dir = dirName;
   const filename = req.file.filename;
-  fs.move(`uploads/temp/${filename}`, `uploads/images/${dir}/${filename}`);
+  fs.move(`src/public/uploads/temp/${filename}`, `src/public/uploads/images/${dir}/${filename}`);
 }
 
-function getCategories() {
-  return fs.promises.readdir('./uploads/images');
+exports.getCategories = function () {
+  return fs.promises.readdir('src/public/uploads/images');
 }
 
-module.exports = {
-  storage: storage,
-  upload: upload,
-  processUploads: processUploads,
-  getCategories: getCategories,
+exports.getPictures = function (category) {
+  return fs.promises.readdir('src/public/uploads/images/' + category);
 }

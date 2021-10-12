@@ -5,8 +5,13 @@ const router = express.Router();
 const storageService = require('../services/storage');
 
 router.use("/:category", function (req, res, next) {
-  res.render("pictures", { category: req.params.category });
-  next();
+  storageService.getPictures(req.params.category).then(p => {
+    res.render("pictures", { category: req.params.category, pics: p });
+    next();
+  }).catch(e => {
+    res.render("pictures", { category: req.params.category });
+    next();
+  })
 })
 
 router.get("/", function (req, res, next) {
