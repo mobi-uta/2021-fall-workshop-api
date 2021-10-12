@@ -7,17 +7,21 @@ const upload = storageService.upload;
 router.post('/leaf', upload.single('image'), function (req, res, next) {
   storageService.processUploads("leaf", req);
   console.log(req.path)
+
+  res.redirect("/success");
 })
 
 router.post('/brown', upload.single('image'), function (req, res, next) {
   storageService.processUploads("brown", req);
   console.log(req.path)
+
+  res.redirect("/success");
 })
 
 router.get('/', function (req, res, next) {
-  storageService.getCategories().then(f => {
-    res.render("addPictureIndex", { category: req.params.category, files: f });
-  })
+  let stack = router.stack.filter(r => r.route && !r.route.path.includes(":") && r.route.path.length > 1).map(r => r.route.path.substr(1))
+
+  res.render("addPictureIndex", { category: req.params.category, files: stack });
 })
 
 router.get('/:category', function (req, res, next) {

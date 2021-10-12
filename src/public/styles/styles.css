@@ -597,6 +597,11 @@ video {
   display: none;
 }
 
+.my-8{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .mb-8{
   margin-bottom: 2rem;
 }
@@ -715,6 +720,7 @@ footer{
 
 button, .button{
   display: block;
+  max-width: 20rem;
   --tw-bg-opacity: 1;
   background-color: rgba(19, 167, 6, var(--tw-bg-opacity));
   padding-top: 0.5rem;
@@ -728,6 +734,10 @@ button, .button{
   text-transform: capitalize;
   --tw-text-opacity: 1;
   color: rgba(255, 242, 218, var(--tw-text-opacity));
+}
+
+button:first-child ~ button, .button:first-child ~ .button{
+  margin-top: 1rem;
 }
 
 .title {
