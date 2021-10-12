@@ -1,7 +1,15 @@
 extends layouts/base.pug
 
 block content
+
+  - var files
+
   section
     h1.title.mb-12 Fall Thoughts
-    sub Pictures and scenes when we imagine&nbsp;fall.
+    p.mb-8 Pictures and scenes when we imagine&nbsp;fall.
+
+    ul
+      each cat in files
+        li.mb-2
+          a(href=`./${cat}`).underline=cat
 

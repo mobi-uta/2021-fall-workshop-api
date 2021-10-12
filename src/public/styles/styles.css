@@ -609,28 +609,16 @@ video {
   margin-bottom: 1rem;
 }
 
+.mb-2{
+  margin-bottom: 0.5rem;
+}
+
 .block{
   display: block;
 }
 
 .flex{
   display: flex;
-}
-
-.max-w-2xl{
-  max-width: 42rem;
-}
-
-.max-w-xl{
-  max-width: 36rem;
-}
-
-.max-w-md{
-  max-width: 28rem;
-}
-
-.max-w-sm{
-  max-width: 24rem;
 }
 
 .max-w-xs{
@@ -663,6 +651,10 @@ video {
 .text-primary{
   --tw-text-opacity: 1;
   color: rgba(19, 167, 6, var(--tw-text-opacity));
+}
+
+.underline{
+  text-decoration: underline;
 }
 
 :root{

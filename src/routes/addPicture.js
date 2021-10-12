@@ -6,12 +6,18 @@ const upload = storageService.upload;
 
 router.post('/leaf', upload.single('image'), function (req, res, next) {
   storageService.processUploads("leaf", req);
+  console.log(req.path)
+})
 
-  console.log("File uploaded")
+router.post('/brown', upload.single('image'), function (req, res, next) {
+  storageService.processUploads("brown", req);
+  console.log(req.path)
 })
 
 router.get('/', function (req, res, next) {
-  res.render("addPictureIndex", { category: req.params.category });
+  storageService.getCategories().then(f => {
+    res.render("addPictureIndex", { category: req.params.category, files: f });
+  })
 })
 
 router.get('/:category', function (req, res, next) {

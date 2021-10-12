@@ -1,13 +1,21 @@
 const express = require("express");
+const fs = require('fs');
 const router = express.Router();
 
-router.get("/", function (req, res, next) {
-  console.log(router.stack)
-  res.render("picturesIndex");
+const storageService = require('../services/storage');
+
+router.use("/:category", function (req, res, next) {
+  res.render("pictures", { category: req.params.category });
+  next();
 })
 
-router.get("/:category", function (req, res, next) {
-  res.render("pictures", { category: req.params.category})
+router.get("/", function (req, res, next) {
+  storageService.getCategories().then(f => {
+    res.render("picturesIndex", { files: f });
+  });
+})
+
+router.get("/leaf", function (req, res, next) {
 });
 
 module.exports = router;
