@@ -13,7 +13,7 @@ router.get('/', function (req, res, next) {
     !r.route.path.includes(":")
     && r.route.path.length > 1
     && r.route.methods.post)
-    .map(r => r.route.path.substr(1))
+    .map(r => r.route.path.substr(5))
 
   res.render("addPictureIndex", { category: req.params.category, files: stack });
 })
